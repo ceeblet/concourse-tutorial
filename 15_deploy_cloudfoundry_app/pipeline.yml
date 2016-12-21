@@ -24,6 +24,7 @@ jobs:
 - name: job-deploy-app
   serial: true
   plan:
+  - get: resource-tutorial
   - {get: resource-web-app, trigger: true}
   - task: cf_manifest
     config:
