@@ -1,5 +1,10 @@
 ---
 resources:
+- name: resource-tutorial
+  type: git
+  source:
+    uri: https://github.com/mtthwcmpbll/concourse-tutorial.git
+
 - name: resource-web-app
   type: git
   source:
@@ -20,6 +25,9 @@ jobs:
   serial: true
   plan:
   - {get: resource-web-app, trigger: true}
+  - task: cf_manifest
+    config:
+    file: resource-tutorial/15_deploy_cloudfoundry_app/cf_manifest.yml
   - put: resource-deploy-web-app
     params:
       manifest: resource-web-app/manifest.yml
