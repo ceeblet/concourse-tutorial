@@ -4,4 +4,4 @@ set -e
 
 pwd
 ls -lah
-cp manifest.yml cf_manifest/manifest.yml
+cp resource-tutorial/15_deploy_cloudfoundry_app/manifest.yml cf_manifest/manifest.yml
