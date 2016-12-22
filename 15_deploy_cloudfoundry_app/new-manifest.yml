@@ -4,3 +4,5 @@ applications:
   disk: 256M
   memory: 128M
   random-route: true
+  host: mcampbell-simple-go-web-app
+  domain: cfapps.pez.pivotal.io
